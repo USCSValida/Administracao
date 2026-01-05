@@ -4,14 +4,12 @@
 <meta charset="UTF-8">
 <title>Validação USCS</title>
 <link rel="stylesheet" href="style.css">
+
 <script>
 function validarForm() {
   const codigo = document.getElementById("codigo").value;
-  const data = document.getElementById("data").value;
 
-  // DADOS MOCK DA CARTEIRINHA
   const MATRICULA_VALIDA = "161119962609";
-  const DATA_VALIDA = "1996-11-16"; // ajuste se quiser
 
   if (!/^\d{12}$/.test(codigo)) {
     alert("A matrícula deve conter exatamente 12 números.");
@@ -23,28 +21,31 @@ function validarForm() {
     return false;
   }
 
-  if (data !== DATA_VALIDA) {
-    alert("Data de nascimento não confere.");
-    return false;
-  }
-
   return true;
 }
 </script>
 </head>
+
 <body>
-<header class="topo"><div class="logo"><img src="logo.png"></div></header>
+
+<header class="topo">
+  <div class="logo">
+    <img src="logo.png" alt="USCS">
+  </div>
+</header>
+
 <section class="container">
-<h1>Valide a Carteira de Identificação</h1>
-<form action="resultado.html" method="get" class="box" onsubmit="return validarForm()">
-<label>Mátricula: </label>
-<input type="text" id="codigo" name="codigo" maxlength="12" required>
+  <div class="box-wrapper">
+    <h1>Valide a Carteira de Identificação</h1>
 
-<label>Data de Nascimento: </label>
-<input type="date" id="data" name="data" required>
+    <form action="resultado.html" method="get" class="box" onsubmit="return validarForm()">
+      <label>Matrícula</label>
+      <input type="text" id="codigo" name="codigo" maxlength="12" required>
 
-<button type="submit">Validar</button>
-</form>
+      <button type="submit">Validar</button>
+    </form>
+  </div>
 </section>
+
 </body>
 </html>
