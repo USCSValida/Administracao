@@ -1,9 +1,9 @@
-fetch("https://api.github.com")
-  .then(res => {
-    const serverDate = res.headers.get("date");
-    const d = new Date(serverDate);
+fetch("https://worldtimeapi.org/api/timezone/America/Sao_Paulo")
+  .then(res => res.json())
+  .then(data => {
+    const d = new Date(data.datetime);
     document.getElementById("hora").textContent =
-      d.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" });
+      d.toLocaleString("pt-BR");
   })
   .catch(() => {
     document.getElementById("hora").textContent =
