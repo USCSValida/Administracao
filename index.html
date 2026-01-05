@@ -9,13 +9,22 @@ function validarForm() {
   const codigo = document.getElementById("codigo").value;
   const data = document.getElementById("data").value;
 
+  // DADOS MOCK DA CARTEIRINHA
+  const MATRICULA_VALIDA = "161119962609";
+  const DATA_VALIDA = "1999-11-16"; // ajuste se quiser
+
   if (!/^\d{12}$/.test(codigo)) {
     alert("A matrícula deve conter exatamente 12 números.");
     return false;
   }
 
-  if (!data) {
-    alert("Data de nascimento inválida.");
+  if (codigo !== MATRICULA_VALIDA) {
+    alert("Matrícula não encontrada.");
+    return false;
+  }
+
+  if (data !== DATA_VALIDA) {
+    alert("Data de nascimento não confere.");
     return false;
   }
 
