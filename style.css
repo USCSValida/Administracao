@@ -28,7 +28,7 @@ body {
   max-height: 60px;
 }
 
-/* CONTEÚDO CENTRAL */
+/* ÁREA CENTRAL */
 .container {
   flex: 1;
   width: 100%;
@@ -41,26 +41,40 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-/* TÍTULO */
-h1 {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-/* FORM */
-.box {
+/* FORM E RESULTADO */
+.box,
+.resultado-box {
   background: #fff;
   color: #000;
   padding: 30px;
   border-radius: 8px;
   width: 100%;
-  max-width: 360px;
+  max-width: 420px;
   text-align: center;
 }
 
+/* TÍTULOS */
+h1, h2 {
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* TEXTO */
+.resultado-box p {
+  margin: 8px 0;
+  text-align: left;
+}
+
+/* STATUS */
+.ok {
+  color: #2ea44f;
+  font-weight: bold;
+}
+
+/* INPUTS (caso reuse o CSS no index) */
 label {
   display: block;
   margin-top: 10px;
@@ -91,7 +105,12 @@ button {
     max-height: 45px;
   }
 
-  .box {
+  .box,
+  .resultado-box {
     margin: 0 15px;
+  }
+
+  .resultado-box p {
+    font-size: 14px;
   }
 }
